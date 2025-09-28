@@ -8,22 +8,28 @@
 
 <body>
 
-    <div>
-        <h2 id="greeting"></h2>
-        <p id="leftGuesses"></p>
+    <main>
+        <section class="app-card" aria-labelledby="game-heading">
+            <form id="usernameForm" autocomplete="off" style="margin-bottom: 18px;">
+                <label for="usernameInput"><b>Please enter your name:</b></label>
+                <input type="text" id="usernameInput" maxlength="24" required style="margin-top:8px;max-width:220px;">
+                <button type="submit" class="btn primary" style="margin-top:8px;">Start Game</button>
+            </form>
+            <h2 id="greeting" style="display:none;"></h2>
+            <p id="leftGuesses" style="display:none;"></p>
 
-        <label for="userInput">Enter a number between 0 and 100:</label>
-        <br>
-        <input type="number" id="userInput">
-        <button id="guessBtn" disabled>Guess</button>
+            <label for="userInput" id="guessLabel" style="display:none;">Enter a number between 0 and 100:</label>
+            <input type="number" id="userInput" aria-describedby="leftGuesses" style="display:none;">
+            <button id="guessBtn" class="btn primary" disabled style="display:none;">Guess</button>
 
-        <p id="message" aria-live="polite"></p>
+            <p id="message" aria-live="polite" style="display:none;"></p>
 
-        <div id="end-game-buttons">
-            <button id="playAgainBtn">Play Again</button>
-            <button id="exitBtn">Exit</button>
-        </div>
-    </div>
+            <div id="end-game-buttons" style="display:none;">
+                <button id="playAgainBtn" class="btn secondary">Play Again</button>
+                <button id="exitBtn" class="btn danger">Exit</button>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
